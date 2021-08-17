@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 
 def posts(request):
@@ -9,6 +10,7 @@ def posts(request):
     return render(request, 'task_threes/posts.html', context)
 
 
+@login_required()
 def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
