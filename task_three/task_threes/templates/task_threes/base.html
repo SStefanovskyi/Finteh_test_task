@@ -1,12 +1,15 @@
-<div style="padding: 15px; font-size: 20px; ">
-    <a href="{% url 'task_threes:posts' %}">Task Three</a>
-    {% if user.is_authenticated %}
-        Hello, {{ user.username }}.
-        <a href="{% url 'users:logout' %}">log out</a>
-    {% else %}
-        <a href="{% url 'users:register' %}">Register</a>
-        <a href="{% url 'users:login' %}">log in</a>
-    {% endif %}
+<div style="padding: 30px; font-size: 20px; background-color: #f3f3f3">
+    <div style="float:left; padding-left:10px;"><a href="{% url 'task_threes:posts' %}">Task Three</a></div>
+
+    <div style="float:right; padding-right:10px;;">
+        {% if user.is_authenticated %}
+            Hello, {{ user.username }}.
+            <a href="{% url 'users:logout' %}">log out</a>
+        {% else %}
+            <a href="{% url 'users:register' %}">Register</a>
+            <a href="{% url 'users:login' %}">log in</a>
+        {% endif %}
+    </div>
 </div>
 
 {% block content %}{% endblock content %}

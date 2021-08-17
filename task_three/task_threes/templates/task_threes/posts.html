@@ -4,10 +4,10 @@
     <div>
         {% block content %}
         {% for posts in post %}
-            <div style="background-color: white;padding: 20px;margin-top: 20px;">
+            <div style="background-color: #f3f3f3;padding: 20px;margin-top: 20px;">
                 <h2>{{ posts.title }}</h2>
                 <h5>{{ posts.content }}</h5>
-                <img style="height: 200px" src="{{ posts.image.url }}">
+{#                <img style="height: 200px" src="{{ posts.image.url }}">#}
             </div>
 
             {% empty %}
