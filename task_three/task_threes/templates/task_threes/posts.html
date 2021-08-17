@@ -6,7 +6,6 @@
         {% for posts in post %}
             <li>{{ posts.title }}</li>
             <li>{{ posts.content }}</li>
-            <li>{{ posts.image }}</li>
             <img src="{{ posts.image.url }}" >
         {% empty %}
             <li>No posts have been added yet.</li>

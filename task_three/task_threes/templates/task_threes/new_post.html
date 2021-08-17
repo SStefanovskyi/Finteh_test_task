@@ -5,6 +5,7 @@
 <form action="{% url 'task_threes:new_post' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
+
     <button name="submit">add post</button>
 </form>
 

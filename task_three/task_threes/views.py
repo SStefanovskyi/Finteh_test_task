@@ -14,10 +14,11 @@ def new_post(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            #return redirect('task_three:posts')
+            #return redirect('task_threes:posts')
             image = form.instance
             context = {'form': form, 'image': image}
-            return render(request, 'task_three/new_post.html', context)
+
+            return render(request, 'task_threes/new_post.html', context)
     else:
         form = PostForm()
-        return render(request, 'task_three/new_post.html', {'form': form})
+        return render(request, 'task_threes/new_post.html', {'form': form})
