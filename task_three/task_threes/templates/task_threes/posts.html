@@ -1,17 +1,25 @@
-{% block content %}
+<div style="padding: 15px; font-size: 20px; text-align: center;">
+    <h2>Test task #3</h2>
+</div>
 
-    <p>Posts</p>
-
-    <ui>
+<div>
+    <div>
+        {% block content %}
         {% for posts in post %}
-            <li>{{ posts.title }}</li>
-            <li>{{ posts.content }}</li>
-            <img src="{{ posts.image.url }}" >
-        {% empty %}
-            <li>No posts have been added yet.</li>
+            <div style="background-color: white;padding: 20px;margin-top: 20px;">
+                <h2>{{ posts.title }}</h2>
+                <h5>{{ posts.content }}</h5>
+                <img style="height: 200px" src="{{ posts.image.url }}">
+            </div>
+
+            {% empty %}
+            <div style="text-align: center;">No posts have been added yet.</div>
         {% endfor %}
-    </ui>
+        <br>
+        <form style="text-align: center;" action="{% url 'task_threes:new_post' %}">
+            <input type="submit" value="Add a new post:"/>
+        </form>
+        {% endblock content %}
 
-    <a href="{% url 'task_threes:new_post' %}">Add a new post:</a>
-
-{% endblock content %}
+    </div>
+</div>

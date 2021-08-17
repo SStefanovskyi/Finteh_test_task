@@ -15,4 +15,4 @@ def register(request):
             return redirect('task_threes:posts')
 
     context = {'form': form}
-    return render(request, 'users/register.html', context)
+    return render(request, 'registration/register.html', context)
