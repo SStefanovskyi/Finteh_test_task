@@ -1,0 +1,18 @@
+{% block content %}
+
+    <p>Posts</p>
+
+    <ui>
+        {% for posts in post %}
+            <li>{{ posts.title }}</li>
+            <li>{{ posts.content }}</li>
+            <li>{{ posts.image }}</li>
+            <img src="{{ posts.image.url }}" >
+        {% empty %}
+            <li>No posts have been added yet.</li>
+        {% endfor %}
+    </ui>
+
+    <a href="{% url 'task_threes:new_post' %}">Add a new post:</a>
+
+{% endblock content %}
